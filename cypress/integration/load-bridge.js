@@ -1,6 +1,11 @@
 describe("Keptn's Bridge", () => {
   it("successfully loads dashboard", () => {
-    cy.visit("http://api-gateway-nginx.keptn.svc.cluster.local/bridge");
+    cy.visit("http://api-gateway-nginx.keptn.svc.cluster.local/bridge", {
+            headers: {
+                authorization: Cypress.env('BRIDGE_AUTHORIZATION')
+            },
+            failOnStatusCode: false
+        });
 
     cy.contains(
       "Keptn"
