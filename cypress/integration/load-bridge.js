@@ -8,7 +8,7 @@ describe("Keptn's Bridge", () => {
     });
 
     cy.contains("Keptn").should("be.visible");
-    cy.get('button').contains('Accept').click();
+    cy.get('button').contains('Accept (recommended)').click();
     cy.contains("Create a new project").should("be.visible");
   });
 });
